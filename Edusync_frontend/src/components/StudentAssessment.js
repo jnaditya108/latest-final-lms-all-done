@@ -88,10 +88,13 @@ function StudentAssessment() {
                 return;
             }
 
-            await submitAssessment(assessmentId, {
-                userId: userId,
-                answers: answers
-            });
+            // Format answers to match backend expectations
+            const formattedAnswers = Object.entries(answers).map(([questionId, answer]) => ({
+                questionId: parseInt(questionId),
+                answerText: Array.isArray(answer) ? answer.join(',') : answer
+            }));
+
+            await submitAssessment(assessmentId, formattedAnswers);
             navigate('/student');
         } catch (err) {
             console.error('Error submitting assessment:', err);

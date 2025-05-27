@@ -289,6 +289,19 @@ function EducatorDashboard() {
                                                 Add Assessment
                                             </button>
                                             <button
+                                                onClick={() => handleViewStudentsClick(course.id)}
+                                                style={{
+                                                    ...buttonBaseStyle,
+                                                    backgroundColor: '#9b59b6',
+                                                    color: 'white',
+                                                    '&:hover': {
+                                                        backgroundColor: '#8e44ad'
+                                                    }
+                                                }}
+                                            >
+                                                View Students
+                                            </button>
+                                            <button
                                                 onClick={() => handleDeleteCourse(course.id)}
                                                 style={deleteButtonStyle}
                                             >

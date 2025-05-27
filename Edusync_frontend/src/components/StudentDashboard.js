@@ -54,19 +54,43 @@ function StudentDashboard() {
 
     const handleEnrollClick = async (courseId) => {
         try {
-            await enrollInCourse({
+            const enrollmentResponse = await enrollInCourse({
                 userId: parseInt(userId),
-                courseId: courseId,
-                enrollmentDate: new Date().toISOString()
+                courseId: courseId
+                // Note: We don't need to send enrollmentDate as it's set by the backend
             });
-            const response = await getEnrolledCourses(userId);
-            setEnrolledCourses(response.data);
-            setAvailableCourses(prev => prev.filter(course => course.id !== courseId));
-            setMessage('Successfully enrolled in the course!');
-            setError(null); // Clear any previous errors
+
+            if (enrollmentResponse.status === 200) {
+                // Refresh enrolled courses
+                const response = await getEnrolledCourses(userId);
+                setEnrolledCourses(response.data);
+                
+                // Update available courses
+                const allCoursesResponse = await getCourses();
+                const availableCourses = allCoursesResponse.data.filter(course => 
+                    !response.data.some(enrolled => enrolled.id === course.id)
+                );
+                setAvailableCourses(availableCourses);
+
+                setMessage(enrollmentResponse.data.message || 'Successfully enrolled in the course!');
+                setError(null); // Clear any previous errors
+            }
         } catch (err) {
             console.error('Error enrolling in course:', err);
-            const errorMessage = err.response?.data?.message || 'Failed to enroll in the course. Please try again.';
+            let errorMessage = 'Failed to enroll in the course. Please try again.';
+            
+            if (err.response) {
+                if (err.response.status === 401) {
+                    errorMessage = 'Please log in to enroll in courses.';
+                    localStorage.clear();
+                    navigate('/login');
+                } else if (err.response.status === 400) {
+                    errorMessage = err.response.data.message || 'Invalid enrollment request.';
+                } else if (err.response.status === 404) {
+                    errorMessage = 'Course not found.';
+                }
+            }
+            
             setError(errorMessage);
             setMessage(''); // Clear any success message
         }

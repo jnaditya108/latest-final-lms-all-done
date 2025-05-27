@@ -83,7 +83,7 @@ export const getEnrolledCourses = (userId) => {
 };
 
 export const enrollInCourse = (enrollmentData) => {
-    return API.post('/enrollments', enrollmentData);
+    return API.post('/enrollments/enroll', enrollmentData);
 };
 
 // --- Assessment Endpoints ---
