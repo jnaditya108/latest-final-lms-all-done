@@ -26,7 +26,7 @@ pipeline {
                     bat 'docker-compose up -d'
                     
                     // Wait for services to be ready
-                    bat 'timeout /t 30 /nobreak'
+                    
                 }
             }
         }
