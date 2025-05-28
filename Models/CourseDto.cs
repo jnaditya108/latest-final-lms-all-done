@@ -1,5 +1,6 @@
 // File: EduSyncAPI/Models/CourseDto.cs
 using System;
+using System.Collections.Generic;
 
 namespace EduSyncAPI.Models
 {
@@ -14,6 +15,15 @@ namespace EduSyncAPI.Models
         public string? VideoUrl { get; set; } // NEW
         public string? ThumbnailUrl { get; set; } // NEW
         public string? ModulePdfUrl { get; set; } // NEW: PDF Module URL
-        public DateTime EnrollmentDate { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime? EnrollmentDate { get; set; }
+        
+        // New properties for counts
+        public int EnrollmentsCount { get; set; }
+        public int AssessmentsCount { get; set; }
+        
+        // Collections for frontend use
+        public ICollection<EnrollmentDto>? Enrollments { get; set; }
+        public ICollection<AssessmentDto>? Assessments { get; set; }
     }
 }

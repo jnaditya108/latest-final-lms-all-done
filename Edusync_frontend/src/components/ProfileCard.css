@@ -1,0 +1,81 @@
+.profile-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-avatar {
+    margin-right: 24px;
+}
+
+.profile-avatar img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #f0f0f0;
+}
+
+.profile-info {
+    flex: 1;
+}
+
+.profile-info h2 {
+    margin: 0 0 8px 0;
+    color: #333;
+    font-size: 24px;
+}
+
+.profile-info p {
+    margin: 4px 0;
+    color: #666;
+}
+
+.profile-info .role {
+    color: #2196f3;
+    font-weight: 500;
+}
+
+.profile-info .email {
+    color: #666;
+}
+
+.profile-info .join-date {
+    color: #888;
+    font-size: 0.9em;
+}
+
+.profile-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 16px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.stat-item h3 {
+    margin: 0;
+    color: #2196f3;
+    font-size: 24px;
+}
+
+.stat-item p {
+    margin: 4px 0 0 0;
+    color: #666;
+    font-size: 14px;
+} 

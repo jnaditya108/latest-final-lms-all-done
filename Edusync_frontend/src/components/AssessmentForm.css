@@ -1,0 +1,110 @@
+.assessment-form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.assessment-form-container {
+    background: white;
+    border-radius: 12px;
+    padding: 32px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.assessment-form-container h2 {
+    margin: 0 0 24px 0;
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="datetime-local"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.2s ease;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2196f3;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+}
+
+.button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.button-primary {
+    background: #2196f3;
+    color: white;
+}
+
+.button-primary:hover:not(:disabled) {
+    background: #1976d2;
+}
+
+.button-secondary {
+    background: #e3f2fd;
+    color: #2196f3;
+}
+
+.button-secondary:hover:not(:disabled) {
+    background: #bbdefb;
+}
+
+.error-message {
+    padding: 12px;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    background: #ffebee;
+    color: #c62828;
+    font-size: 14px;
+} 

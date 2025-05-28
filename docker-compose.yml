@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: lms-backend
+    ports:
+      - "5121:5121"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=db;Database=EduSyncDB;User=sa;Password=YourStrong!Passw0rd;TrustServerCertificate=True;
+    volumes:
+      - uploaded_files:/app/wwwroot/uploads
+    depends_on:
+      - db
+    networks:
+      - lms-network
+
+  frontend:
+    build:
+      context: ./Edusync_frontend
+      dockerfile: Dockerfile
+    container_name: lms-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - lms-network
+
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: lms-db
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=YourStrong!Passw0rd
+      - MSSQL_PID=Express
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+    networks:
+      - lms-network
+
+networks:
+  lms-network:
+    driver: bridge
+
+volumes:
+  sqlserver_data:
+    driver: local
+  uploaded_files:
+    driver: local 

@@ -126,11 +126,21 @@ export const deleteQuestion = (assessmentId, questionId) => {
 
 // --- Assessment API Functions ---
 export const createAssessment = (assessmentData) => {
-    return API.post('/assessments', assessmentData);
+    const formattedData = {
+        ...assessmentData,
+        startDate: new Date(assessmentData.startDate).toISOString(),
+        endDate: new Date(assessmentData.endDate).toISOString()
+    };
+    return API.post('/assessments', formattedData);
 };
 
 export const updateAssessment = (assessmentId, assessmentData) => {
-    return API.put(`/assessments/${assessmentId}`, assessmentData);
+    const formattedData = {
+        ...assessmentData,
+        startDate: new Date(assessmentData.startDate).toISOString(),
+        endDate: new Date(assessmentData.endDate).toISOString()
+    };
+    return API.put(`/assessments/${assessmentId}`, formattedData);
 };
 
 export const deleteAssessment = (assessmentId) => {
@@ -152,6 +162,10 @@ export const uploadCourseContent = (courseId, contentData) => {
 
 export const getStudentAssessments = (userId) => {
     return API.get(`/assessments/student/${userId}`);
+};
+
+export const toggleCourseCompletion = (enrollmentId) => {
+    return API.put(`/enrollments/complete/${enrollmentId}`);
 };
 
 export default API;

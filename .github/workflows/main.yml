@@ -1,0 +1,90 @@
+name: EduSync CI/CD
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+
+    # Setup .NET
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '7.0.x'
+
+    # Setup Node.js
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18.x'
+
+    # Backend Build and Test
+    - name: Restore backend dependencies
+      run: dotnet restore
+      
+    - name: Build backend
+      run: dotnet build --no-restore --configuration Release
+
+    - name: Run backend tests
+      run: dotnet test --no-build --verbosity normal
+
+    # Frontend Build and Test
+    - name: Install frontend dependencies
+      working-directory: ./Edusync_frontend
+      run: npm install
+
+    - name: Build frontend
+      working-directory: ./Edusync_frontend
+      run: npm run build
+
+    - name: Run frontend tests
+      working-directory: ./Edusync_frontend
+      run: npm test -- --passWithNoTests
+
+    # Docker Build
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+
+    - name: Login to Docker Hub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Build and push backend Docker image
+      uses: docker/build-push-action@v4
+      with:
+        context: .
+        push: ${{ github.event_name != 'pull_request' }}
+        tags: ${{ secrets.DOCKER_USERNAME }}/edusync-backend:latest
+
+    - name: Build and push frontend Docker image
+      uses: docker/build-push-action@v4
+      with:
+        context: ./Edusync_frontend
+        push: ${{ github.event_name != 'pull_request' }}
+        tags: ${{ secrets.DOCKER_USERNAME }}/edusync-frontend:latest
+
+  deploy:
+    needs: build-and-test
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+
+    # Add deployment steps here based on your hosting platform
+    # Example for Azure App Service:
+    # - name: Deploy to Azure Web App
+    #   uses: azure/webapps-deploy@v2
+    #   with:
+    #     app-name: your-app-name
+    #     publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+    #     package: . 

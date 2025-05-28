@@ -1,0 +1,33 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+.vs/
+.vscode/
+
+# Node.js
+node_modules/
+npm-debug.log
+build/
+
+# Docker
+Dockerfile*
+docker-compose*
+.dockerignore
+
+# Git
+.git/
+.gitignore
+
+# Environment files
+.env
+*.env
+appsettings.*.json
+
+# Uploaded files
+wwwroot/uploads/
+
+# Documentation
+README.md
+*.md 

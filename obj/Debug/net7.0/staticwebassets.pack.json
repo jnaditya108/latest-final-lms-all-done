@@ -5,12 +5,24 @@
       "PackagePath": "staticwebassets\\uploads\\pdfs\\0b46e2b9-34be-4c7d-9da0-f2485bc88c42_638839462178214162.pdf"
     },
     {
+      "Id": "D:\\lms latest\\LMS_25-05\\wwwroot\\uploads\\pdfs\\3243b60e-5b43-48c6-8b0e-6a26ea6cac7c_638839788790225742.pdf",
+      "PackagePath": "staticwebassets\\uploads\\pdfs\\3243b60e-5b43-48c6-8b0e-6a26ea6cac7c_638839788790225742.pdf"
+    },
+    {
+      "Id": "D:\\lms latest\\LMS_25-05\\wwwroot\\uploads\\pdfs\\74cdb0ca-1894-4c69-a2cf-7a6ea54108e4_638839750298812456.pdf",
+      "PackagePath": "staticwebassets\\uploads\\pdfs\\74cdb0ca-1894-4c69-a2cf-7a6ea54108e4_638839750298812456.pdf"
+    },
+    {
       "Id": "D:\\lms latest\\LMS_25-05\\wwwroot\\uploads\\pdfs\\b7ed7b40-0589-4ee3-836e-14bccd50d557_638839466528841843.pdf",
       "PackagePath": "staticwebassets\\uploads\\pdfs\\b7ed7b40-0589-4ee3-836e-14bccd50d557_638839466528841843.pdf"
     },
     {
       "Id": "D:\\lms latest\\LMS_25-05\\wwwroot\\uploads\\thumbnails\\33f3a43d-cec8-4a0f-80e5-9ebca0f5d357_638838673504850957.png",
       "PackagePath": "staticwebassets\\uploads\\thumbnails\\33f3a43d-cec8-4a0f-80e5-9ebca0f5d357_638838673504850957.png"
+    },
+    {
+      "Id": "D:\\lms latest\\LMS_25-05\\wwwroot\\uploads\\thumbnails\\68ac9b5f-5c15-40bb-8f82-e8d41a392135_638839750298787444.jpg",
+      "PackagePath": "staticwebassets\\uploads\\thumbnails\\68ac9b5f-5c15-40bb-8f82-e8d41a392135_638839750298787444.jpg"
     },
     {
       "Id": "D:\\lms latest\\LMS_25-05\\wwwroot\\uploads\\thumbnails\\7832024f-23e6-4d72-9c11-903e282377f5_638838674685462816.png",
@@ -25,6 +37,10 @@
       "PackagePath": "staticwebassets\\uploads\\thumbnails\\b932611f-2ef8-48a9-acf4-9c4d85be27d2_638838692017896710.png"
     },
     {
+      "Id": "D:\\lms latest\\LMS_25-05\\wwwroot\\uploads\\thumbnails\\c3e0c672-0c73-471f-9143-2b6cf1c315f9_638839788790216224.jpg",
+      "PackagePath": "staticwebassets\\uploads\\thumbnails\\c3e0c672-0c73-471f-9143-2b6cf1c315f9_638839788790216224.jpg"
+    },
+    {
       "Id": "D:\\lms latest\\LMS_25-05\\wwwroot\\uploads\\thumbnails\\f0ed76f1-6dcd-4c6f-840c-6130c1539c0c_638839466528838414.png",
       "PackagePath": "staticwebassets\\uploads\\thumbnails\\f0ed76f1-6dcd-4c6f-840c-6130c1539c0c_638839466528838414.png"
     },
@@ -37,12 +53,20 @@
       "PackagePath": "staticwebassets\\uploads\\videos\\732609c2-b453-48d2-8111-d8b403871a86_638839462178122737.mp4"
     },
     {
+      "Id": "D:\\lms latest\\LMS_25-05\\wwwroot\\uploads\\videos\\9225bb30-327a-48d7-a693-2960f16eaac6_638839750298589310.mp4",
+      "PackagePath": "staticwebassets\\uploads\\videos\\9225bb30-327a-48d7-a693-2960f16eaac6_638839750298589310.mp4"
+    },
+    {
       "Id": "D:\\lms latest\\LMS_25-05\\wwwroot\\uploads\\videos\\9e4b44b3-267c-49f1-9f9e-4f253d34a6ac_638838673010502963.mp4",
       "PackagePath": "staticwebassets\\uploads\\videos\\9e4b44b3-267c-49f1-9f9e-4f253d34a6ac_638838673010502963.mp4"
     },
     {
       "Id": "D:\\lms latest\\LMS_25-05\\wwwroot\\uploads\\videos\\b43e4e1b-065a-4ca5-b1f4-1c87534d9d4a_638839466528788518.mp4",
       "PackagePath": "staticwebassets\\uploads\\videos\\b43e4e1b-065a-4ca5-b1f4-1c87534d9d4a_638839466528788518.mp4"
+    },
+    {
+      "Id": "D:\\lms latest\\LMS_25-05\\wwwroot\\uploads\\videos\\c27b978f-bc5e-49d8-bb7e-53edfcd82914_638839788789855832.mp4",
+      "PackagePath": "staticwebassets\\uploads\\videos\\c27b978f-bc5e-49d8-bb7e-53edfcd82914_638839788789855832.mp4"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.EduSyncAPI.Microsoft.AspNetCore.StaticWebAssets.props",

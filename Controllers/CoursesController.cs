@@ -127,23 +127,54 @@ namespace EduSyncAPI.Controllers
         [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<CourseDto>>> GetCourses()
         {
-            var courses = await _context.Courses
-                .Include(c => c.Instructor)
-                .ToListAsync();
-
-            var courseDtos = courses.Select(c => new CourseDto
+            try
             {
-                Id = c.Id,
-                Title = c.Title,
-                Description = c.Description,
-                InstructorId = c.InstructorId,
-                InstructorUsername = c.Instructor?.Username ?? "N/A",
-                VideoUrl = c.VideoUrl,
-                ThumbnailUrl = c.ThumbnailUrl,
-                ModulePdfUrl = c.ModulePdfUrl
-            }).ToList();
+                var courses = await _context.Courses
+                    .Include(c => c.Instructor)
+                    .Include(c => c.Enrollments)
+                    .Include(c => c.Assessments)
+                    .ToListAsync();
 
-            return Ok(courseDtos);
+                var courseDtos = courses.Select(c => new CourseDto
+                {
+                    Id = c.Id,
+                    Title = c.Title,
+                    Description = c.Description,
+                    InstructorId = c.InstructorId,
+                    InstructorUsername = c.Instructor?.Username ?? "N/A",
+                    VideoUrl = c.VideoUrl,
+                    ThumbnailUrl = c.ThumbnailUrl,
+                    ModulePdfUrl = c.ModulePdfUrl,
+                    CreatedAt = c.CreatedAt,
+                    EnrollmentsCount = c.Enrollments != null ? c.Enrollments.Count : 0,
+                    AssessmentsCount = c.Assessments != null ? c.Assessments.Count : 0,
+                    // Include full collections for frontend use if needed
+                    Enrollments = c.Enrollments?.Select(e => new EnrollmentDto
+                    {
+                        Id = e.Id,
+                        UserId = e.UserId,
+                        CourseId = e.CourseId,
+                        EnrollmentDate = e.EnrollmentDate,
+                        IsCompleted = e.IsCompleted
+                    }).ToList(),
+                    Assessments = c.Assessments?.Select(a => new AssessmentDto
+                    {
+                        Id = a.Id,
+                        Title = a.Title,
+                        Description = a.Description,
+                        StartDate = a.StartDate,
+                        EndDate = a.EndDate,
+                        CourseId = a.CourseId
+                    }).ToList()
+                }).ToList();
+
+                return Ok(courseDtos);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error getting courses: {ex}");
+                return StatusCode(500, new { message = "An error occurred while retrieving courses.", error = ex.Message });
+            }
         }
 
         [HttpGet("{id}")]

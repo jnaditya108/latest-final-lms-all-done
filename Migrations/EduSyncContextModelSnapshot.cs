@@ -63,6 +63,9 @@ namespace EduSyncAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasMaxLength(500)
@@ -108,11 +111,17 @@ namespace EduSyncAPI.Migrations
                     b.Property<int>("CourseId")
                         .HasColumnType("int");
 
+                    b.Property<DateTime?>("CompletionDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime>("EnrollmentDate")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("Id")
                         .HasColumnType("int");
+
+                    b.Property<bool>("IsCompleted")
+                        .HasColumnType("bit");
 
                     b.Property<int?>("UserId1")
                         .HasColumnType("int");

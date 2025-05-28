@@ -16,6 +16,38 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\pdfs\0b46e2b9-34be-4c7d-9da0-f2485bc88c42_638839462178214162.pdf))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\pdfs\3243b60e-5b43-48c6-8b0e-6a26ea6cac7c_638839788790225742.pdf))">
+      <SourceType>Package</SourceType>
+      <SourceId>EduSyncAPI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/EduSyncAPI</BasePath>
+      <RelativePath>uploads/pdfs/3243b60e-5b43-48c6-8b0e-6a26ea6cac7c_638839788790225742.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\pdfs\3243b60e-5b43-48c6-8b0e-6a26ea6cac7c_638839788790225742.pdf))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\pdfs\74cdb0ca-1894-4c69-a2cf-7a6ea54108e4_638839750298812456.pdf))">
+      <SourceType>Package</SourceType>
+      <SourceId>EduSyncAPI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/EduSyncAPI</BasePath>
+      <RelativePath>uploads/pdfs/74cdb0ca-1894-4c69-a2cf-7a6ea54108e4_638839750298812456.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\pdfs\74cdb0ca-1894-4c69-a2cf-7a6ea54108e4_638839750298812456.pdf))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\pdfs\b7ed7b40-0589-4ee3-836e-14bccd50d557_638839466528841843.pdf))">
       <SourceType>Package</SourceType>
       <SourceId>EduSyncAPI</SourceId>
@@ -47,6 +79,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\thumbnails\33f3a43d-cec8-4a0f-80e5-9ebca0f5d357_638838673504850957.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\thumbnails\68ac9b5f-5c15-40bb-8f82-e8d41a392135_638839750298787444.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>EduSyncAPI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/EduSyncAPI</BasePath>
+      <RelativePath>uploads/thumbnails/68ac9b5f-5c15-40bb-8f82-e8d41a392135_638839750298787444.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\thumbnails\68ac9b5f-5c15-40bb-8f82-e8d41a392135_638839750298787444.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\thumbnails\7832024f-23e6-4d72-9c11-903e282377f5_638838674685462816.png))">
       <SourceType>Package</SourceType>
@@ -96,6 +144,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\thumbnails\b932611f-2ef8-48a9-acf4-9c4d85be27d2_638838692017896710.png))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\thumbnails\c3e0c672-0c73-471f-9143-2b6cf1c315f9_638839788790216224.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>EduSyncAPI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/EduSyncAPI</BasePath>
+      <RelativePath>uploads/thumbnails/c3e0c672-0c73-471f-9143-2b6cf1c315f9_638839788790216224.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\thumbnails\c3e0c672-0c73-471f-9143-2b6cf1c315f9_638839788790216224.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\thumbnails\f0ed76f1-6dcd-4c6f-840c-6130c1539c0c_638839466528838414.png))">
       <SourceType>Package</SourceType>
       <SourceId>EduSyncAPI</SourceId>
@@ -144,6 +208,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\videos\732609c2-b453-48d2-8111-d8b403871a86_638839462178122737.mp4))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\videos\9225bb30-327a-48d7-a693-2960f16eaac6_638839750298589310.mp4))">
+      <SourceType>Package</SourceType>
+      <SourceId>EduSyncAPI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/EduSyncAPI</BasePath>
+      <RelativePath>uploads/videos/9225bb30-327a-48d7-a693-2960f16eaac6_638839750298589310.mp4</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\videos\9225bb30-327a-48d7-a693-2960f16eaac6_638839750298589310.mp4))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\videos\9e4b44b3-267c-49f1-9f9e-4f253d34a6ac_638838673010502963.mp4))">
       <SourceType>Package</SourceType>
       <SourceId>EduSyncAPI</SourceId>
@@ -175,6 +255,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\videos\b43e4e1b-065a-4ca5-b1f4-1c87534d9d4a_638839466528788518.mp4))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\videos\c27b978f-bc5e-49d8-bb7e-53edfcd82914_638839788789855832.mp4))">
+      <SourceType>Package</SourceType>
+      <SourceId>EduSyncAPI</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/EduSyncAPI</BasePath>
+      <RelativePath>uploads/videos/c27b978f-bc5e-49d8-bb7e-53edfcd82914_638839788789855832.mp4</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\videos\c27b978f-bc5e-49d8-bb7e-53edfcd82914_638839788789855832.mp4))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

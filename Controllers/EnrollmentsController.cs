@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using EduSyncAPI.Data;
 using Microsoft.AspNetCore.Authorization;
 using System;
+using System.Linq;
 
 namespace EduSyncAPI.Controllers
 {
@@ -153,6 +154,43 @@ namespace EduSyncAPI.Controllers
             catch (Exception ex)
             {
                 return StatusCode(500, new { message = "An error occurred while withdrawing the student.", error = ex.Message });
+            }
+        }
+
+        [HttpPut("complete/{enrollmentId}")]
+        [Authorize(Roles = "Student")]
+        public async Task<IActionResult> CompleteCourse(int enrollmentId)
+        {
+            try
+            {
+                var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == "userId");
+                if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int userId))
+                {
+                    return Unauthorized(new { message = "Invalid user ID. Please log in again." });
+                }
+
+                var enrollment = await _context.Enrollments
+                    .FirstOrDefaultAsync(e => e.Id == enrollmentId && e.UserId == userId);
+
+                if (enrollment == null)
+                {
+                    return NotFound(new { message = "Enrollment not found or you don't have permission to modify it." });
+                }
+
+                enrollment.IsCompleted = !enrollment.IsCompleted; // Toggle completion status
+                enrollment.CompletionDate = enrollment.IsCompleted ? DateTime.UtcNow : null;
+
+                await _context.SaveChangesAsync();
+
+                return Ok(new { 
+                    message = enrollment.IsCompleted ? "Course marked as completed!" : "Course marked as incomplete.",
+                    isCompleted = enrollment.IsCompleted,
+                    completionDate = enrollment.CompletionDate
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "An error occurred while updating course completion status.", error = ex.Message });
             }
         }
     }

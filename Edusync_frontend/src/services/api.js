@@ -1,15 +1,15 @@
 // src/services/api.js
 import axios from 'axios';
 
-const API = axios.create({
+const api = axios.create({
     baseURL: 'http://localhost:5121/api',
     headers: {
         'Content-Type': 'application/json'
     }
 });
 
-// Request interceptor to add auth token
-API.interceptors.request.use(
+// Add a request interceptor for JWT token
+api.interceptors.request.use(
     (config) => {
         const token = localStorage.getItem('token');
         if (token) {
@@ -23,7 +23,7 @@ API.interceptors.request.use(
 );
 
 // Response interceptor to handle auth errors
-API.interceptors.response.use(
+api.interceptors.response.use(
     (response) => response,
     (error) => {
         if (error.response?.status === 401) {
@@ -34,4 +34,4 @@ API.interceptors.response.use(
     }
 );
 
-export default API;
+export default api;

@@ -12,6 +12,8 @@ import CourseStudentsPage from './components/CourseStudentsPage';
 import CourseDetailsPage from './components/CourseDetailsPage';
 import StudentAssessment from './components/StudentAssessment';
 import CourseContent from './components/CourseContent';
+import CourseStudents from './components/CourseStudents';
+import './App.css';
 
 // ---------- PRIVATE ROUTE ----------
 function PrivateRoute({ children, allowedRoles }) {
@@ -96,18 +98,18 @@ function App() {
                         }
                     />
                     <Route
-                        path="/educator/assessments/:assessmentId/questions"
+                        path="/course/:courseId/students"
                         element={
                             <PrivateRoute allowedRoles={['Educator']}>
-                                <QuestionManagerWrapper />
+                                <CourseStudents />
                             </PrivateRoute>
                         }
                     />
                     <Route
-                        path="/educator/courses/:courseId/students"
+                        path="/educator/assessments/:assessmentId/questions"
                         element={
                             <PrivateRoute allowedRoles={['Educator']}>
-                                <CourseStudentsWrapper />
+                                <QuestionManagerWrapper />
                             </PrivateRoute>
                         }
                     />

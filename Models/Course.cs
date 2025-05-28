@@ -1,5 +1,6 @@
 ﻿// EduSyncAPI/Models/Course.cs
 
+using System;
 using System.Collections.Generic; // Required for ICollection
 using System.ComponentModel.DataAnnotations; // For [Required], [MaxLength]
 using System.Text.Json.Serialization;
@@ -35,6 +36,8 @@ namespace EduSyncAPI.Models
         // NEW: PDF Module URL (nullable)
         [MaxLength(1024, ErrorMessage = "PDF URL cannot exceed 1024 characters.")]
         public string? ModulePdfUrl { get; set; }
+
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
         // Navigation property for assessments in this course
         public ICollection<Assessment> Assessments { get; set; } = new List<Assessment>();
