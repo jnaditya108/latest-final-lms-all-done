@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: lms-backend
+    container_name: lms-backend-02
     ports:
       - "5121:5121"
     environment:
@@ -22,7 +22,7 @@ services:
     build:
       context: ./Edusync_frontend
       dockerfile: Dockerfile
-    container_name: lms-frontend
+    container_name: lms-frontend-02
     ports:
       - "3000:3000"
     depends_on:
@@ -32,7 +32,7 @@ services:
 
   db:
     image: mcr.microsoft.com/mssql/server:2022-latest
-    container_name: lms-db
+    container_name: lms-db-02
     environment:
       - ACCEPT_EULA=Y
       - SA_PASSWORD=YourStrong!Passw0rd
