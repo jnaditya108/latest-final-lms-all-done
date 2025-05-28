@@ -11,7 +11,7 @@ pipeline {
         stage('Build Images') {
             steps {
                 script {
-                    sh 'docker-compose build'
+                    bat 'docker-compose build'
                 }
             }
         }
@@ -20,13 +20,13 @@ pipeline {
             steps {
                 script {
                     // Stop any running containers
-                    sh 'docker-compose down || true'
+                    bat 'docker-compose down || exit 0'
                     
                     // Start the application
-                    sh 'docker-compose up -d'
+                    bat 'docker-compose up -d'
                     
                     // Wait for services to be ready
-                    sh 'sleep 30'
+                    bat 'timeout /t 30 /nobreak'
                 }
             }
         }
@@ -35,7 +35,7 @@ pipeline {
             steps {
                 script {
                     // Check if containers are running
-                    sh 'docker ps | grep lms'
+                    bat 'docker ps | findstr lms'
                 }
             }
         }
@@ -49,4 +49,4 @@ pipeline {
             echo 'Deployment failed! Check the logs for details.'
         }
     }
-} 
+}
